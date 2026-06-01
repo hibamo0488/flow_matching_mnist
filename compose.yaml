@@ -1,0 +1,30 @@
+services:
+  flow_matching_mnist:
+    network_mode: host
+    build:
+      network: host
+      context: .
+      args:
+        UID: "${UID:-1000}"
+        GID: "${GID:-1000}"
+    working_dir: /workspace
+    volumes:
+      - ./:/workspace
+
+
+    ## GPU環境ある方は以下をコメント解除 
+    ## GPU環境無い方はコメントアウト
+    ## ==== GPU環境 ====
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu] 
+
+    shm_size: '16GB'
+    ## ==================
+
+    tty: true
+    command: bash
