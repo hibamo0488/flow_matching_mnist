@@ -1,5 +1,5 @@
 # Flow Matching MNISTデモ
-私が執筆してるこちらのブログで紹介してる内容となります。
+私が執筆してる[こちら](https://hibamo.com/flow_matching_mnist/)のブログで紹介してる内容となります。
 
 ## 必要環境/想定環境
 - VSCode
